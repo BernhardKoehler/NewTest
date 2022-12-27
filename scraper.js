@@ -44,7 +44,7 @@ function run(db) {
 	fetchPage("https://morph.io", function (body) {
 		// Use cheerio to find things in the page with css selectors.
 		var $ = cheerio.load(body);
-
+		console.log('HERE BODY', body);
 		var elements = $("div.media-body span.p-name").each(function () {
 			var value = $(this).text().trim();
 			updateRow(db, value);
