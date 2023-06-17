@@ -3,6 +3,8 @@
 var cheerio = require("cheerio");
 var sqlite3 = require("sqlite3").verbose();
 var axios = require("axios");
+const dotenv = require("dotenv");
+dotenv.config();
 
 function initDatabase(callback) {
   // Set up sqlite database.
@@ -63,7 +65,7 @@ function run(db) {
 }
 
 function tryRequest() {
-  const url = process.env.MORPH_API_BASE + "/broadcasts/2023-04-30";
+  const url = process.env.MORPH_API_BASE + "broadcasts/2023-04-30";
 
   request(
     {
@@ -99,7 +101,8 @@ function getProgramsForNextXDays(dayCount) {
   for (i = 1; i < dayCount; i++) {
     datumsObjekt.setDate(datumsObjekt.getDate() + 1);
     let datum = datumsObjekt.toISOString().slice(0, 10);
-    const url = process.env.MORPH_API_BASE + `/broadcasts/${datum}`;
+    const url = process.env.MORPH_API_BASE + `broadcasts/${datum}`;
+
     result.push(axios.get(url));
   }
   return result;
@@ -180,6 +183,7 @@ function sendMail(findings) {
   content += "</ul>";
 
   mailUrl = process.env.MORPH_TVSCRAPER_BASE + "email.php";
+
   mailConfig = {
     headers: {
       Authorization: process.env.MORPH_EMAILSECRET,
@@ -205,7 +209,8 @@ function matchProgramsWithSearchlist() {
 
 function getSearchlist() {
   console.info("-----------------> Getting searchlist ");
-  const url = process.env.MORPH_TVSCRAPER_BASE + "index.php/suchliste";
+  const url =
+    "http://bernhardkoehler.bplaced.net/TVScraper/index.php/suchliste";
 
   return axios.get(url);
   /*.then(function optionalCallback(response) {
@@ -221,7 +226,7 @@ function getSearchlist() {
 }
 
 function getChannels() {
-  const url = process.env.MORPH_API_BASE + "/channels";
+  const url = process.env.MORPH_API_BASE + "channels";
   return axios.get(url);
 }
 const dayCount = 7;
