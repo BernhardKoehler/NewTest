@@ -1,0 +1,4 @@
+# Ignore output of scraper
+node_modules/*
+data.sqlite
+.env
