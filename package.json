@@ -21,8 +21,5 @@
   "keywords": [
     "scraper",
     "morph"
-  ],
-  "scripts": {
-    "install": "node-pre-gyp install --fallback-to-build"
-  }
+  ]
 }
