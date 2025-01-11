@@ -134,7 +134,7 @@ function sendMail(findings) {
   console.info("-----------------> Found something, sending email ");
 
   // HTML erstellen
-  content = "<h1>TV Scraper information</h1>";
+  let content = "<h1>TV Scraper information</h1>";
   content +=
     "<p>Hallo, die Suche nach Programmen war erfolgreich. Folgende Sendungen werden ausgestrahlt.";
   content += "<ul>";
