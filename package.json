@@ -9,7 +9,7 @@
     "host": "https://node-pre-gyp.s3.amazonaws.com/"
   },
   "engines": {
-    "node": "6.11.1"
+    "node": "12.x"
   },
   "type": "module",
   "dependencies": {
