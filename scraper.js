@@ -190,7 +190,7 @@ function sendMail(findings) {
     },
   };
   mailContent = { text: content };
-  axios.post(mailUrl, JSON.stringify(mailContent), mailConfig);
+  //axios.post(mailUrl, JSON.stringify(mailContent), mailConfig);
 }
 
 function matchProgramsWithSearchlist() {
