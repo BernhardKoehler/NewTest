@@ -1,9 +1,10 @@
 // This is a template for a Node.js scraper on morph.io (https://morph.io)
 
-var cheerio = require("cheerio");
-var sqlite3 = require("sqlite3").verbose();
-var axios = require("axios");
-const dotenv = require("dotenv");
+import "cheerio";
+import "sqlite3";
+import "axios";
+import "dotenv";
+
 dotenv.config();
 
 function initDatabase(callback) {
