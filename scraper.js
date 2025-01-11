@@ -99,7 +99,7 @@ const channelMap = new Map();
 function getProgramsForNextXDays(dayCount) {
   console.info("-----------------> Searching programs ");
   const result = [];
-  for (i = 1; i < dayCount; i++) {
+  for (let i = 1; i < dayCount; i++) {
     datumsObjekt.setDate(datumsObjekt.getDate() + 1);
     let datum = datumsObjekt.toISOString().slice(0, 10);
     const url = process.env.MORPH_API_BASE + `broadcasts/${datum}`;
