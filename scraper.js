@@ -238,7 +238,7 @@ $channels = getChannels();
 Promise.all([$searchlist, $channels, ...$programs]).then(function (results) {
   // programs
   const events = [];
-  for (i = 2; i < dayCount + 1; i++) {
+  for (let i = 2; i < dayCount + 1; i++) {
     jsonObject = results[i].data.events;
     events.push(...jsonObject);
   }
