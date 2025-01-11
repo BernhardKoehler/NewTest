@@ -258,7 +258,7 @@ Promise.all([$searchlist, $channels, ...$programs]).then(function (results) {
   });
 
   // Searchlist
-  const jsonObject = results[0].data;
+  let jsonObject = results[0].data;
   jsonObject.forEach((entity) => {
     searchlist.push(entity.Name);
   });
