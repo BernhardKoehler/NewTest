@@ -4,7 +4,8 @@
   "version": "0.0.1",
   "main": "scraper.js",
   "engines": {
-    "node": "6.11.1"
+    "node": "6.11.1",
+    "npm": "6.11.1"
   },
   "dependencies": {
     "node-pre-gyp": "0.10.1-dev.1",
