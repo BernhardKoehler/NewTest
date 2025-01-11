@@ -231,9 +231,9 @@ function getChannels() {
   return axios.get(url);
 }
 const dayCount = 7;
-$programs = getProgramsForNextXDays(dayCount);
-$searchlist = getSearchlist();
-$channels = getChannels();
+let $programs = getProgramsForNextXDays(dayCount);
+let $searchlist = getSearchlist();
+let $channels = getChannels();
 
 Promise.all([$searchlist, $channels, ...$programs]).then(function (results) {
   // programs
