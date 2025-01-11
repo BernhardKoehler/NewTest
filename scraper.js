@@ -5,8 +5,6 @@ import "sqlite3";
 import "axios";
 import "dotenv";
 
-dotenv.config();
-
 function initDatabase(callback) {
   // Set up sqlite database.
   var db = new sqlite3.Database("data.sqlite");
