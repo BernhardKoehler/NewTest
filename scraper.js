@@ -1,9 +1,9 @@
 // This is a template for a Node.js scraper on morph.io (https://morph.io)
 
-import { cheerio } from "cheerio";
-import { sqlite3 } from "sqlite3";
-import { axios } from "axios";
-import { dotenv } from "dotenv";
+import * as cheerio from "cheerio";
+import * as sqlite3 from "sqlite3";
+import * as axios from "axios";
+import * as dotenv from "dotenv";
 
 dotenv.config();
 
