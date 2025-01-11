@@ -3,6 +3,11 @@
   "description": "Scrapes TV program",
   "version": "0.0.1",
   "main": "scraper.js",
+  "binary": {
+    "module_name": "tvscraper",
+    "module_path": "./lib/binding/{version}/{toolset}/",
+    "host": "https://node-pre-gyp.s3.amazonaws.com/"
+  },
   "engines": {
     "node": "6.17.1"
   },
