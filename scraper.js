@@ -239,8 +239,7 @@ Promise.all([$searchlist, $channels, ...$programs]).then(function (results) {
   // programs
   const events = [];
   for (let i = 2; i < dayCount + 1; i++) {
-    jsonObject = results[i].data.events;
-    events.push(...jsonObject);
+    events.push(...results[i].data.events);
   }
   events.forEach((event) => {
     let existingEvent = programlist.find((e) => e.title === event.title);
