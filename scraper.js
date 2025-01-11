@@ -183,14 +183,14 @@ function sendMail(findings) {
   });
   content += "</ul>";
 
-  mailUrl = process.env.MORPH_TVSCRAPER_BASE + "email.php";
+  const mailUrl = process.env.MORPH_TVSCRAPER_BASE + "email.php";
 
-  mailConfig = {
+  const mailConfig = {
     headers: {
       Authorization: process.env.MORPH_EMAILSECRET,
     },
   };
-  mailContent = { text: content };
+  const mailContent = { text: content };
   //axios.post(mailUrl, JSON.stringify(mailContent), mailConfig);
 }
 
