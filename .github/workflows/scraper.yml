@@ -6,6 +6,7 @@ on:
 jobs:
   scraper:
     runs-on: ubuntu-latest
+    environment: env
 
     steps:
       - name: Repository auschecken
