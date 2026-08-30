@@ -1,0 +1,27 @@
+name: TV Scraper
+
+on:
+  workflow_dispatch:
+
+jobs:
+  scraper:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+
+      - name: Node installieren
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Abhängigkeiten installieren
+        run: npm install
+
+      - name: Scraper starten
+        env:
+          MORPH_API_BASE: ${{ secrets.MORPH_API_BASE }}
+          MORPH_TVSCRAPER_BASE: ${{ secrets.MORPH_TVSCRAPER_BASE }}
+          MORPH_EMAILSECRET: ${{ secrets.MORPH_EMAILSECRET }}
+        run: node scraper.js
