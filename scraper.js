@@ -255,17 +255,6 @@ Promise.all([$searchlist, $channels, ...$programs]).then(function (results) {
       channel: event.channel,
       duration: event.duration,
     });
-  }).catch(function (error) {
-    console.error("-----------------> Request failed");
-
-    if (error && error.response) {
-      console.error("Status:", error.response.status);
-      console.error("StatusText:", error.response.statusText);
-      console.error("URL:", error.config && error.config.url);
-      console.error("Response:", error.response.data);
-    } else {
-      console.error("Error:", error);
-    }
   });
 
   // Searchlist
@@ -282,4 +271,15 @@ Promise.all([$searchlist, $channels, ...$programs]).then(function (results) {
   });
 
   matchProgramsWithSearchlist();
-});
+}).catch(function (error) {
+    console.error("-----------------> Request failed");
+
+    if (error && error.response) {
+      console.error("Status:", error.response.status);
+      console.error("StatusText:", error.response.statusText);
+      console.error("URL:", error.config && error.config.url);
+      console.error("Response:", error.response.data);
+    } else {
+      console.error("Error:", error);
+    }
+  });
