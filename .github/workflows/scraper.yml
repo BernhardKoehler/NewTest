@@ -20,6 +20,17 @@ jobs:
       - name: Abhängigkeiten installieren
         run: npm install
 
+      - name: Secrets prüfen
+        env:
+          MORPH_API_BASE: ${{ secrets.MORPH_API_BASE }}
+          MORPH_TVSCRAPER_BASE: ${{ secrets.MORPH_TVSCRAPER_BASE }}
+          MORPH_EMAILSECRET: ${{ secrets.MORPH_EMAILSECRET }}
+        run: |
+          echo "MORPH_API_BASE gesetzt: $([ -n "$MORPH_API_BASE" ] && echo JA || echo NEIN)"
+          echo "MORPH_TVSCRAPER_BASE gesetzt: $([ -n "$MORPH_TVSCRAPER_BASE" ] && echo JA || echo NEIN)"
+          echo "MORPH_EMAILSECRET gesetzt: $([ -n "$MORPH_EMAILSECRET" ] && echo JA || echo NEIN)"
+
+
       - name: Scraper starten
         env:
           MORPH_API_BASE: ${{ secrets.MORPH_API_BASE }}
