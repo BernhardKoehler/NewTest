@@ -5,7 +5,7 @@ import sqlite3 from "sqlite3";
 import axios from "axios";
 import dotenv from "dotenv";
 
-dotenv.config();
+dotenv.config({ override: true });
 
 function initDatabase(callback) {
   // Set up sqlite database.
